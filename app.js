@@ -24,7 +24,7 @@ app.use(webhook(function(json, done) {
   var out = json;
 
   // specify URL to forward your transformed data to
-  out.url = 'http://pacific-eyrie-9417.herokuapp.com';
+  out.url = 'http://pacific-eyrie-9417.herokuapp.com/twitter';
 
   done(null, out);
 }));
@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 app.get('/', function(req, res) {
-  return res.redirect('http://pacific-eyrie-9417.herokuapp.com:22218');
+  return res.redirect('http://pacific-eyrie-9417.herokuapp.com/twitter');
 });
 
 // production error handler
