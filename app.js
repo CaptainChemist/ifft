@@ -20,7 +20,7 @@ app.set('view engine', 'jade');
 
 app.use(webhook(function(json, done) {
   // transform data
-  var out = getOutputObjectFromInput(json);
+  var out = json;
 
   // specify URL to forward your transformed data to
   out.url = 'http://requestb.in/1k3co801?inspect';
