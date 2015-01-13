@@ -18,7 +18,17 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 
-app.use(webhook());
+app.use(webhook(function(json, done) {
+  // transform data
+  var out = getOutputObjectFromInput(json);
+
+  // specify URL to forward your transformed data to
+  out.url = 'http://requestb.in/1k3co801?inspect';
+
+  done(null, out);
+}));
+
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
