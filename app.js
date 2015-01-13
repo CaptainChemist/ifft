@@ -17,26 +17,19 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
 
 app.use(webhook(function(json, done) {
   // transform data
   var out = json;
 
   // specify URL to forward your transformed data to
-  out.url = 'http://requestb.in/1k3co801?inspect';
+  out.url = 'http://requestb.in/1k3co801';
 
   done(null, out);
 }));
 
-
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,11 +43,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 app.get('/', function(req, res) {
-  return res.redirect('http://pacific-eyrie-9417.herokuapp.com');
-});
-
-var server = app.listen(app.get('port'), function() {
-  console.log('Server listening on port', server.address().port);
+  return res.redirect('http://pacific-eyrie-9417.herokuapp.com:22218');
 });
 
 // production error handler
