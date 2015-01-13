@@ -40,8 +40,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 app.get('/', function(req, res) {
-  return res.redirect('http://requestb.in/1hn2ovb1');
-  // return res.redirect('http://pacific-eyrie-9417.herokuapp.com');
+  return res.redirect('http://pacific-eyrie-9417.herokuapp.com');
 });
 
 var server = app.listen(app.get('port'), function() {
