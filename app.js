@@ -24,7 +24,7 @@ app.use(webhook(function(json, done) {
   var out = json;
 
   // specify URL to forward your transformed data to
-  out.url = 'http://requestb.in/1k3co801';
+  out.url = 'http://requestb.in/voa4wpvo';
 
   done(null, out);
 }));
