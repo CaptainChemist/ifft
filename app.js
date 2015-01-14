@@ -22,9 +22,10 @@ app.use(logger('dev'));
 app.use(webhook(function(json, done) {
   // transform data
   var out = json;
-  console.log(json);
+
   // specify URL to forward your transformed data to
-  out.url = 'http://pacific-eyrie-9417.herokuapp.com';
+    out.url = 'INSERT YOUR SINATRA APP URL HERE';
+  // for example: 'http://pacific-eyrie-9417.herokuapp.com'
 
   done(null, out);
 }));
