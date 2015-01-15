@@ -24,7 +24,7 @@ app.use(webhook(function(json, done) {
   var out = json;
 
   // specify URL to forward your transformed data to
-    out.url = 'INSERT YOUR SINATRA APP URL HERE';
+    out.url = 'https://ifft.herokuapp.com';
   // for example: 'http://pacific-eyrie-9417.herokuapp.com'
 
   done(null, out);
