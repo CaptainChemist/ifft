@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 app.get('/', function(req, res) {
-  return res.redirect('http://pacific-eyrie-9417.herokuapp.com');
+  return res.redirect('https://ifft.herokuapp.com');
 });
 
 // production error handler
